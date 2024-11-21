@@ -40,3 +40,20 @@ Create a new function called calculate that takes the 2 numbers and the operator
 for operate function: if operate = math symbol (which will be a string) then run function
 */ 
 
+function calculate (a, b, operator){
+    if(operator = "+"){
+        return addNum(a, b);
+    };
+    if(operator = "-"){
+       return subNum(a, b);
+    }
+    if(operator ="*"){
+        return multiplyNum(a,b);
+    }
+    if(operator = "/") {
+        return divideNum(a,b);
+    }
+    else 
+    return console.log("fail") //this is for testing purposes only and should be removed later
+
+}
