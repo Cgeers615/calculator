@@ -26,6 +26,13 @@ function multiplyNum(a, b) {
 function divideNum(a, b) {
     return a / b;
 }
-/* Step 2
 
+
+/* Step 2
+create variables for numbers and operators that will be used later
 */ 
+let a = 0;
+let b = 0;
+let operator = ""; //operator is set to be blank for now until button for math is selected 
+
+
