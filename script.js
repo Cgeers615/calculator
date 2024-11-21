@@ -2,7 +2,7 @@
 
 
 
-/* Step 1) 
+/* Step 1 - 
 Write 4 functions that represent the basic calcuator functions of add, subtract, multiple and divide
 
 */
@@ -28,11 +28,15 @@ function divideNum(a, b) {
 }
 
 
-/* Step 2
-create variables for numbers and operators that will be used later
-*/ 
+// Step 2 - create variables for numbers and operators that will be used later
+
 let a = 0;
 let b = 0;
 let operator = ""; //operator is set to be blank for now until button for math is selected 
 
+
+/*Step 3 
+Create a new function called calculate that takes the 2 numbers and the operator, and then runs one of the 4 basic math functions
+for operate function: if operate = math symbol (which will be a string) then run function
+*/ 
 
