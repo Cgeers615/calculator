@@ -36,10 +36,14 @@
     width: 300px;
     display:flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 button {
-    width: 95px;
+    width: 100px;
+}
+
+.dbl-btn {
+    width:200px;
 }
 
 
