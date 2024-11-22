@@ -1,0 +1,34 @@
+/* Google Font Import */ 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+#main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+/*left hand side */ 
+
+
+/*calculator container*/ 
+.calc-container{
+    width:500px;
+    font-family: "Orbitron", serif;
+    display: flex;
+    border:1px solid #333333;
+}
+
+/*calculator equation*/ 
+.equation{
+    width: 500px;
+}
+/*calculator numbers */ 
+.number-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/*symbols container */ 
+.operators {
+    display: flex;
+}
