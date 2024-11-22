@@ -14,7 +14,6 @@
 .calc-container{
     width:500px;
     font-family: "Orbitron", serif;
-    display: flex;
     border:1px solid #333333;
 }
 
@@ -25,10 +24,11 @@
 /*calculator numbers */ 
 .number-container {
     display: flex;
-    justify-content: flex-start;
+    
 }
 
 /*symbols container */ 
 .operators {
     display: flex;
+    justify-content: flex-end;
 }
