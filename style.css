@@ -4,7 +4,7 @@
 #main-container {
     display: flex;
     justify-content: space-between;
-    width: 800px;
+    width: 700px;
 }
 
 /*left hand side */ 
@@ -12,23 +12,41 @@
 
 /*calculator container*/ 
 .calc-container{
-    width:500px;
+    width:400px;
     font-family: "Orbitron", serif;
     border:1px solid #333333;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 /*calculator equation*/ 
 .equation{
-    width: 500px;
+    width: 400px;
+    border:1px solid #333333; /*for debugging only */
 }
 /*calculator numbers */ 
-.number-container {
-    display: flex;
-    
+/* .number-container {
+    width: 300px;
+    display:flex;
+
+} */
+
+.number-row{
+    width: 300px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+button {
+    width: 95px;
+}
+
 
 /*symbols container */ 
 .operators {
+    width: 100px;
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
 }
