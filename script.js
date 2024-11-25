@@ -41,16 +41,16 @@ for operate function: if operate = math symbol (which will be a string) then run
 */ 
 
 function calculate (a, b, operator){
-    if(operator = "+"){
+    if(operator === "+"){
         return addNum(a, b);
     };
-    if(operator = "-"){
+    if(operator === "-"){
        return subNum(a, b);
     }
-    if(operator ="*"){
+    if(operator === "*"){
         return multiplyNum(a,b);
     }
-    if(operator = "/") {
+    if(operator === '/') {
         return divideNum(a,b);
     }
     else 
