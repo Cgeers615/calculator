@@ -37,7 +37,7 @@
 .number-row{
     width: 300px;
     display:flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: flex-start;
 }
 button {
@@ -47,6 +47,8 @@ button {
     height:50px;
     margin:2px;
     border:unset;
+    background-color: #747474;
+    color:#ffffff;
 }
 
 .dbl-btn {
