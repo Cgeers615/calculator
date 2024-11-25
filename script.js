@@ -57,3 +57,19 @@ function calculate (a, b, operator){
     return console.log("fail") //this is for testing purposes only and should be removed later
 
 }
+
+/* Step 4 
+Create the functions that will populate the display when the digit buttons are clicked, store the content of the display (the numbers) in a variable for later use. 
+*/
+
+/* breaking this down even further: 
+    a) when button is clicked take value from button 
+*/
+
+let numberBtns = document.querySelectorAll('.numberBtn');
+
+numberBtns.forEach((numberBtn) => {
+    numberBtn.addEventListener('click',() => {
+        console.log(numberBtn.value)
+    })
+})
