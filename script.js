@@ -65,10 +65,17 @@ Create the functions that will populate the display when the digit buttons are c
 /* breaking this down even further: 
     a) when button is clicked take value from button 
     b) take value from button and store it to a new(?) variable (or variable a?)
+    c) create a p tag via the DOM and add it to the div .equation
 */
 
 //a
 let numberBtns = document.querySelectorAll('.numberBtn');
+
+//c
+const equationContainer = document.querySelector('.equation')
+const equationTxt = document.createElement('p');
+equationContainer.appendChild(equationTxt);
+equationTxt.textContent = "123";
 
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click',() => {
