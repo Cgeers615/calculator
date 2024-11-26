@@ -60,12 +60,12 @@ function calculate (a, b, operator){
 
 /* Step 4 
 Create the functions that will populate the display when the digit buttons are clicked, store the content of the display (the numbers) in a variable for later use. 
-*/
 
-/* breaking this down even further: 
+breaking this down even further: 
     a) when button is clicked take value from button 
     b) take value from button and store it to a new(?) variable (or variable a?)
     c) create a p tag via the DOM and add it to the div .equation
+    d) display num1 value in the div .equationTxt
 */
 
 //a
@@ -75,12 +75,15 @@ let numberBtns = document.querySelectorAll('.numberBtn');
 const equationContainer = document.querySelector('.equation')
 const equationTxt = document.createElement('p');
 equationContainer.appendChild(equationTxt);
-equationTxt.textContent = "123";
+equationTxt.textContent = "Welcome";
 
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click',() => {
         //b) take values from btns and assign it to variable num1
         let num1 = numberBtn.value
+        
+        //d
+        equationTxt.textContent = num1;
         console.log(num1)
     })
 })
