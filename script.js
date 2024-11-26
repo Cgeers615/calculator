@@ -64,12 +64,16 @@ Create the functions that will populate the display when the digit buttons are c
 
 /* breaking this down even further: 
     a) when button is clicked take value from button 
+    b) take value from button and store it to a new(?) variable (or variable a?)
 */
 
+//a
 let numberBtns = document.querySelectorAll('.numberBtn');
 
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click',() => {
-        console.log(numberBtn.value)
+        //b) take values from btns and assign it to variable num1
+        let num1 = numberBtn.value
+        console.log(num1)
     })
 })
