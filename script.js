@@ -81,9 +81,20 @@ numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click',() => {
         //b) take values from btns and assign it to variable num1
         let num1 = numberBtn.value
-        
         //d
         equationTxt.textContent = num1;
         console.log(num1)
     })
 })
+
+/* Step 5)
+Make the calculator work by taking the values of the first (num1), the operator (operator) and the 2nd number (num2) and then run the operate function when the = button is pressed. 
+
+Things to remember / watch for: 
+  - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
+    example:  you enter a number (12), followed by an operator button (+), a second number button (7), and a second operator button (-). Your calculator should then do the following: first, evaluate the initial pair of numbers (12 + 7), then display the result of that calculation (19). Finally, use that result (19) as the first number in a new calculation, along with the next operator (-)
+  - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
+  - Pressing the = sign BEFORE entering all numbers could cause problems 
+  - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
+  - Display a error message when users try to divide by 0 
+*/
