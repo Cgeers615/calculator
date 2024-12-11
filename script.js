@@ -105,4 +105,13 @@ Things to remember / watch for:
   - Display a error message when users try to divide by 0 
 */
 
+/* Breaking down step 5 
+    a) when = button is clicked return the value of inside of the equation box as a string
+    b) take said string and make that an array seperating the values by the operator
+    c) assign the array item with an index of 0 to varaible a
+    d) assign the array item with an index of 1 to the variable called operator
+    e) assign the array item with an idex of 2 to the variable b
+    f) THEN run calculate function
+    g) display the return value of the calcuate function inside the equation box
+*/
 
