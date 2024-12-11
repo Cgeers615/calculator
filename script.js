@@ -69,26 +69,32 @@ breaking this down even further:
 */
 
 //a
-let numberBtns = document.querySelectorAll('.numberBtn');
+let mathBtns = document.querySelectorAll('.mathButtons');
 
 //c
 const equationContainer = document.querySelector('.equation')
 const equationTxt = document.createElement('p');
 equationContainer.appendChild(equationTxt);
-equationTxt.textContent = "Welcome";
+equationTxt.textContent = "";
 
-numberBtns.forEach((numberBtn) => {
-    numberBtn.addEventListener('click',() => {
-        //b) take values from btns and assign it to variable num1
-        let num1 = numberBtn.value
-        //d
-        equationTxt.textContent = num1;
-        console.log(num1)
+mathBtns.forEach((mathButtons) => {
+    mathButtons.addEventListener('click',() => {
+        // //b) take values from btns and assign it to variable num1
+        // let num1 = numberBtn.value
+        // //d
+        // equationTxt.textContent = numberBtn.value;
+        // console.log(num1)
+        
+       equationTxt.textContent += mathButtons.value;
+
+
     })
 })
 
 /* Step 5)
 Make the calculator work by taking the values of the first (num1), the operator (operator) and the 2nd number (num2) and then run the operate function when the = button is pressed. 
+
+https://www.geeksforgeeks.org/javascript-calculator/
 
 Things to remember / watch for: 
   - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
@@ -98,3 +104,5 @@ Things to remember / watch for:
   - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
   - Display a error message when users try to divide by 0 
 */
+
+
