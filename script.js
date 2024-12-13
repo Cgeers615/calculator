@@ -119,7 +119,10 @@ const equalBtn = document.querySelector('.submitBtn')
 
 //a 
 equalBtn.addEventListener('click',() => {
-    console.log("Clicked");
+    // for testting purposes console.log("Clicked");
+    //b
+    let numString =  equationTxt.textContent;
+    //for testing purposes console.log(numString);
 }
 
 
