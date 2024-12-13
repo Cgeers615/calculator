@@ -115,3 +115,12 @@ Things to remember / watch for:
     g) display the return value of the calcuate function inside the equation box
 */
 
+const equalBtn = document.querySelector('.submitBtn')
+
+//a 
+equalBtn.addEventListener('click',() => {
+    console.log("Clicked");
+}
+
+
+)
