@@ -125,7 +125,13 @@ equalBtn.addEventListener('click',() => {
     //b
     let numArr = numString.split(/([+\-*/])/)
 
-    console.table(numArr)
+    // for testing purposes console.table(numArr)
+
+    //c,d,e
+
+    let a = numArr[0];
+    let operator = numArr[1]
+    let b =numArr[2];
     
 
 }
