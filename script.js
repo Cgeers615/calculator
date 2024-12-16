@@ -94,7 +94,6 @@ mathBtns.forEach((mathButtons) => {
 /* Step 5)
 Make the calculator work by taking the values of the first (num1), the operator (operator) and the 2nd number (num2) and then run the operate function when the = button is pressed. 
 
-https://www.geeksforgeeks.org/javascript-calculator/
 
 Things to remember / watch for: 
   - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
@@ -107,22 +106,28 @@ Things to remember / watch for:
 
 /* Breaking down step 5 
     a) when = button is clicked return the value of inside of the equation box as a string
-    b) take said string and make that an array seperating the values by the operator
+    b) take said string and make that an array seperating the values by the operator <-- use RegEx? 
     c) assign the array item with an index of 0 to varaible a
     d) assign the array item with an index of 1 to the variable called operator
     e) assign the array item with an idex of 2 to the variable b
     f) THEN run calculate function
     g) display the return value of the calcuate function inside the equation box
+    h) repeat this process until there are no more operators
 */
 
 const equalBtn = document.querySelector('.submitBtn')
 
 //a 
 equalBtn.addEventListener('click',() => {
-    // for testting purposes console.log("Clicked");
-    //b
+  
     let numString =  equationTxt.textContent;
-    //for testing purposes console.log(numString);
+
+    //b
+    let numArr = numString.split(/([+\-*/])/)
+
+    console.table(numArr)
+    
+
 }
 
 
