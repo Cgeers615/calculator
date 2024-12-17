@@ -68,10 +68,10 @@ breaking this down even further:
     d) display num1 value in the div .equationTxt
 */
 
-//a
+
 let mathBtns = document.querySelectorAll('.mathButtons');
 
-//c
+//4c
 const equationContainer = document.querySelector('.equation')
 const equationTxt = document.createElement('p');
 equationContainer.appendChild(equationTxt);
@@ -79,12 +79,7 @@ equationTxt.textContent = "";
 
 mathBtns.forEach((mathButtons) => {
     mathButtons.addEventListener('click',() => {
-        // //b) take values from btns and assign it to variable num1
-        // let num1 = numberBtn.value
-        // //d
-        // equationTxt.textContent = numberBtn.value;
-        // console.log(num1)
-        
+       //4a, 4b, 4d
        equationTxt.textContent += mathButtons.value;
 
 
@@ -94,17 +89,7 @@ mathBtns.forEach((mathButtons) => {
 /* Step 5)
 Make the calculator work by taking the values of the first (num1), the operator (operator) and the 2nd number (num2) and then run the operate function when the = button is pressed. 
 
-
-Things to remember / watch for: 
-  - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
-    example:  you enter a number (12), followed by an operator button (+), a second number button (7), and a second operator button (-). Your calculator should then do the following: first, evaluate the initial pair of numbers (12 + 7), then display the result of that calculation (19). Finally, use that result (19) as the first number in a new calculation, along with the next operator (-)
-  - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
-  - Pressing the = sign BEFORE entering all numbers could cause problems 
-  - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
-  - Display a error message when users try to divide by 0 
-*/
-
-/* Breaking down step 5 
+Breaking down step 5 
     a) when = button is clicked return the value of inside of the equation box as a string
     b) take said string and make that an array seperating the values by the operator <-- use RegEx? 
     c) assign the array item with an index of 0 to varaible a
@@ -112,29 +97,42 @@ Things to remember / watch for:
     e) assign the array item with an idex of 2 to the variable b
     f) THEN run calculate function
     g) display the return value of the calcuate function inside the equation box
+*/
+
+/* Step 6) 
+Evaluate "complex" basic arthmetic - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
+    example:  you enter a number (12), followed by an operator button (+), a second number button (7), and a second operator button (-). Your calculator should then do the following: first, evaluate the initial pair of numbers (12 + 7), then display the result of that calculation (19). Finally, use that result (19) as the first number in a new calculation, along with the next operator (-)
 
 */
 
 const equalBtn = document.querySelector('.submitBtn')
 
-//a 
+//5a 
 equalBtn.addEventListener('click',() => {
   
     let numString =  equationTxt.textContent;
 
-    //b
+    //5b
     let numArr = numString.split(/([+\-*/])/)
 
     // for testing purposes console.table(numArr)
 
-    //c,d,e
+    //5c,d,e
 
     let a = Number(numArr[0]);
     let operator = numArr[1];
     let b = Number(numArr[2]);
     
-    //f,g
+    //5f,g
     equationTxt.textContent = calculate(a,b,operator)
 
 }
 )
+
+/* Gotchas / Things to remember / watch for: 
+  - 
+  - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
+  - Pressing the = sign BEFORE entering all numbers could cause problems 
+  - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
+  - Display a error message when users try to divide by 0 
+h) if there are more than one operator repeat this process until there are no more operators */ 
