@@ -103,6 +103,12 @@ Breaking down step 5
 Evaluate "complex" basic arthmetic - calculator should not evaluate more than a SINGLE PAIR of numbers at a time 
     example:  you enter a number (12), followed by an operator button (+), a second number button (7), and a second operator button (-). Your calculator should then do the following: first, evaluate the initial pair of numbers (12 + 7), then display the result of that calculation (19). Finally, use that result (19) as the first number in a new calculation, along with the next operator (-)
 
+Breaking down step 6
+    a) Evaluate numArr to see IF there is more than 3 entries
+    b) If there is more than 3 entries in the array than solve the first math function
+    c) take total of the first math function and make the the first entry into the array <-- this will replace the first 3 INDEXES OF THE NUM ARR (should this return as the original array or as a copy of the original array)
+    d) run the calculate function again, assigning a,b and operator to be the next 3 values in the array 
+    e) repeat steps 6a - d until there is no values left. 
 */
 
 const equalBtn = document.querySelector('.submitBtn')
@@ -135,4 +141,4 @@ equalBtn.addEventListener('click',() => {
   - Pressing the = sign BEFORE entering all numbers could cause problems 
   - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
   - Display a error message when users try to divide by 0 
-h) if there are more than one operator repeat this process until there are no more operators */ 
+*/ 
