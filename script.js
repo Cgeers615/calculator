@@ -112,7 +112,7 @@ Things to remember / watch for:
     e) assign the array item with an idex of 2 to the variable b
     f) THEN run calculate function
     g) display the return value of the calcuate function inside the equation box
-    h) repeat this process until there are no more operators
+
 */
 
 const equalBtn = document.querySelector('.submitBtn')
@@ -129,12 +129,12 @@ equalBtn.addEventListener('click',() => {
 
     //c,d,e
 
-    let a = numArr[0];
-    let operator = numArr[1]
-    let b =numArr[2];
+    let a = Number(numArr[0]);
+    let operator = numArr[1];
+    let b = Number(numArr[2]);
     
+    //f,g
+    equationTxt.textContent = calculate(a,b,operator)
 
 }
-
-
 )
