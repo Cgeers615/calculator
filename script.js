@@ -125,8 +125,19 @@ equalBtn.addEventListener('click',() => {
 
     //6a
     if (numArr.length > 3){
-        return console.table(numArr)
+        
+         //6b
+         let numSliced = numArr.slice(0,3);
+           //5c,d,e
+        let a = Number(numSliced[0]);
+        let operator = numSliced[1];
+        let b = Number(numSliced[2]);
+
+        //for testing purposes - update the textContent -- delete after 6e is complete
+        equationTxt.textContent = calculate(a,b,operator)
     }
+
+    else{
    
         //5c,d,e
         let a = Number(numArr[0]);
@@ -135,13 +146,8 @@ equalBtn.addEventListener('click',() => {
 
         //5f,g
         equationTxt.textContent = calculate(a,b,operator)
-   
-
+   }
     
-
-    //6a
-
-
 }
 )
 
