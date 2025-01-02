@@ -1,7 +1,4 @@
 /* Web Browser Calculator */
-
-
-
 /* Step 1 - 
 Write 4 functions that represent the basic calcuator functions of add, subtract, multiple and divide
 
@@ -106,7 +103,8 @@ Evaluate "complex" basic arthmetic - calculator should not evaluate more than a 
 Breaking down step 6
     a) Evaluate numArr to see IF there is more than 3 entries - use if/else statement to wrap 5c-5e where the if would evaluate for the bigger array index and the else would assign a,b and operator and run the calculate function
     b) If there is more than 3 entries in the array than solve the first math function <-- use the slice method here
-    c) take total of the first math function and make the the first entry into the array <-- this will replace the first 3 INDEXES OF THE NUM ARR (should this return as the original array or as a copy of the original array)
+    c) take total of the first math function and make the the first entry into the array <-- this will replace the first 3 INDEXES OF THE NUM ARR 
+        -should this return as the original array or as a copy of the original array
     d) run the calculate function again, assigning a,b and operator to be the next 3 values in the array 
     e) repeat steps 6a - d until there is no values left. 
 */
@@ -127,14 +125,19 @@ equalBtn.addEventListener('click',() => {
     if (numArr.length > 3){
         
          //6b
-         let numSliced = numArr.slice(0,3);
-           //5c,d,e
-        let a = Number(numSliced[0]);
-        let operator = numSliced[1];
-        let b = Number(numSliced[2]);
+            let numSliced = numArr.slice(0,3);
+            let a = Number(numSliced[0]);
+            let operator = numSliced[1];
+            let b = Number(numSliced[2]);
+            let c = calculate(a,b,operator);
+        
+        //6c
+            const numSpliced = numArr.toSpliced(0,3,c);
 
-        //for testing purposes - update the textContent -- delete after 6e is complete
-        equationTxt.textContent = calculate(a,b,operator)
+            /*for testing purposes - update the textContent -- delete after 6e is complete
+            equationTxt.textContent = c;*/
+
+            return console.table(numSpliced)
     }
 
     else{
@@ -145,7 +148,7 @@ equalBtn.addEventListener('click',() => {
         let b = Number(numArr[2]);
 
         //5f,g
-        equationTxt.textContent = calculate(a,b,operator)
+        equationTxt.textContent = Number(calculate(a,b,operator));
    }
     
 }
