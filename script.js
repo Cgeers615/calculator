@@ -105,8 +105,11 @@ Breaking down step 6
     b) If there is more than 3 entries in the array than solve the first math function <-- use the slice method here
     c) take total of the first math function and make the the first entry into the array <-- this will replace the first 3 INDEXES OF THE NUM ARR 
         -should this return as the original array or as a copy of the original array
-    d) run the calculate function again, assigning a,b and operator to be the next 3 values in the array 
-    e) repeat steps 6a - d until there is no values left. 
+    d) run the calculate function again, assigning a,b and operator to be the next 3 values in the array <-- this will be done in some form of loop cycle, 
+        --idea: try do...while loop
+        -- i needs to equal the length of the array (3) that is when it will break
+    e) repeat steps 6a - d until there until array length gets down to 3 entries. 
+    f) assign value of completed equation to the equationTxt 
 */
 
 const equalBtn = document.querySelector('.submitBtn')
@@ -120,26 +123,38 @@ equalBtn.addEventListener('click',() => {
     let numArr = numString.split(/([+\-*/])/)
 
     // for testing purposes console.table(numArr)
-
+    //6d
+    let i = numArr.length 
+   do {
     //6a
     if (numArr.length > 3){
-        
+  /* how this loop should work
+  i should equal numArr.length 
+  loop runs
+  subtract 1 from i array length 
+  stop once array length = 3
+  run else statement below it */
+
+ 
+  
          //6b
             let numSliced = numArr.slice(0,3);
             let a = Number(numSliced[0]);
             let operator = numSliced[1];
             let b = Number(numSliced[2]);
             let c = calculate(a,b,operator);
-        
-        //6c
-            const numSpliced = numArr.toSpliced(0,3,c);
 
+        //6c
+            // const numSpliced = numArr.toSpliced(0,3,c);
+           numArr.splice(0,3,c);
             /*for testing purposes - update the textContent -- delete after 6e is complete
             equationTxt.textContent = c;*/
 
-            return console.table(numSpliced)
+        console.table(numArr);
+        
+    
     }
-
+        
     else{
    
         //5c,d,e
@@ -150,7 +165,9 @@ equalBtn.addEventListener('click',() => {
         //5f,g
         equationTxt.textContent = Number(calculate(a,b,operator));
    }
-    
+   --i }
+   while(i > 3)
+
 }
 )
 
