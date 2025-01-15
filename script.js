@@ -106,8 +106,6 @@ Breaking down step 6
     c) take total of the first math function and make the the first entry into the array <-- this will replace the first 3 INDEXES OF THE NUM ARR 
         -should this return as the original array or as a copy of the original array
     d) run the calculate function again, assigning a,b and operator to be the next 3 values in the array <-- this will be done in some form of loop cycle, 
-        --idea: try do...while loop
-        -- i needs to equal the length of the array (3) that is when it will break
     e) repeat steps 6a - d until there until array length gets down to 3 entries. 
     f) assign value of completed equation to the equationTxt 
 */
@@ -122,18 +120,12 @@ equalBtn.addEventListener('click',() => {
     //5b
     let numArr = numString.split(/([+\-*/])/)
 
-    // for testing purposes console.table(numArr)
-    //6d
+    //6d,e,f
     let i = numArr.length 
    do {
     //6a
     if (numArr.length > 3){
-  /* how this loop should work
-  i should equal numArr.length 
-  loop runs
-  subtract 1 from i array length 
-  stop once array length = 3
-  run else statement below it */
+
 
  
   
@@ -147,10 +139,7 @@ equalBtn.addEventListener('click',() => {
         //6c
             // const numSpliced = numArr.toSpliced(0,3,c);
            numArr.splice(0,3,c);
-            /*for testing purposes - update the textContent -- delete after 6e is complete
-            equationTxt.textContent = c;*/
-
-        console.table(numArr);
+        //console.table(numArr);
         
     
     }
@@ -170,6 +159,15 @@ equalBtn.addEventListener('click',() => {
 
 }
 )
+
+
+/* Step 7) Reset Button - when user clicks 'Reset' Calc resets */
+const resetBtn = document.querySelector('.resetBtn')
+
+resetBtn.addEventListener('click',() =>{
+    equationTxt.textContent = '';
+
+});
 
 /* Gotchas / Things to remember / watch for: 
   - 
