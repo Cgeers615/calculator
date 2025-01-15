@@ -27,8 +27,8 @@ function divideNum(a, b) {
 
 // Step 2 - create variables for numbers and operators that will be used later
 
-let a = 0;
-let b = 0;
+let a = "";
+let b = "";
 let operator = ""; //operator is set to be blank for now until button for math is selected 
 
 
@@ -115,45 +115,44 @@ const equalBtn = document.querySelector('.submitBtn')
 //5a 
 equalBtn.addEventListener('click',() => {
   
-    let numString =  equationTxt.textContent;
+    let numString = equationTxt.textContent;
 
     //5b
     let numArr = numString.split(/([+\-*/])/)
+
+  
 
     //6d,e,f
     let i = numArr.length 
    do {
     //6a
     if (numArr.length > 3){
-
-
- 
-  
          //6b
             let numSliced = numArr.slice(0,3);
             let a = Number(numSliced[0]);
             let operator = numSliced[1];
             let b = Number(numSliced[2]);
             let c = calculate(a,b,operator);
-
         //6c
             // const numSpliced = numArr.toSpliced(0,3,c);
            numArr.splice(0,3,c);
         //console.table(numArr);
-        
-    
     }
+    else if (numArr.includes('') || numArr.length < 2) {
+       alert('error')
+        equationTxt.textContent = 'Error';
         
-    else{
-   
-        //5c,d,e
-        let a = Number(numArr[0]);
-        let operator = numArr[1];
-        let b = Number(numArr[2]);
-
-        //5f,g
-        equationTxt.textContent = Number(calculate(a,b,operator));
-   }
+        
+    }
+    else if (numArr.length == 3) {
+                //5c,d,e
+                let a = Number(numArr[0]);
+                let operator = numArr[1];
+                let b = Number(numArr[2]);
+        
+                //5f,g
+                equationTxt.textContent = Number(calculate(a,b,operator));
+    }
    --i }
    while(i > 3)
 
@@ -161,7 +160,7 @@ equalBtn.addEventListener('click',() => {
 )
 
 
-/* Step 7) Reset Button - when user clicks 'Reset' Calc resets */
+/* Step 7) Reset Button - when user clicks 'Reset' Calc resets - */
 const resetBtn = document.querySelector('.resetBtn')
 
 resetBtn.addEventListener('click',() =>{
@@ -170,9 +169,7 @@ resetBtn.addEventListener('click',() =>{
 });
 
 /* Gotchas / Things to remember / watch for: 
-  - 
   - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
   - Pressing the = sign BEFORE entering all numbers could cause problems 
-  - Pressing clear, should completely clear the calculator (idea for this is a function called reset that sets everything back to all original values?)
   - Display a error message when users try to divide by 0 
 */ 
