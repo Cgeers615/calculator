@@ -47,6 +47,7 @@ p{
 /*calculator equation*/ 
 .equation{
     width: 400px;
+    height:56px;
     padding:10px;
     border:1px solid #333333; /*for debugging only */
 }
