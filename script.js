@@ -21,7 +21,11 @@ function multiplyNum(a, b) {
 
 //divide
 function divideNum(a, b) {
-    return a / b;
+//divide by 0 not allowed - Display a error message when users try to divide by 0 
+    if (a == 0 || b == 0) {
+        alert ("Error, stop trying to break my app")
+    }
+    else return a / b;
 }
 
 
@@ -138,12 +142,12 @@ equalBtn.addEventListener('click',() => {
            numArr.splice(0,3,c);
         //console.table(numArr);
     }
+
     else if (numArr.includes('') || numArr.length < 2) {
        alert('error')
-        equationTxt.textContent = 'Error';
-        
-        
+        equationTxt.textContent = 'Error';    
     }
+    
     else if (numArr.length == 3) {
                 //5c,d,e
                 let a = Number(numArr[0]);
@@ -170,6 +174,5 @@ resetBtn.addEventListener('click',() =>{
 
 /* Gotchas / Things to remember / watch for: 
   - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
-  - Pressing the = sign BEFORE entering all numbers could cause problems 
-  - Display a error message when users try to divide by 0 
+  
 */ 
