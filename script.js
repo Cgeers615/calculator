@@ -42,21 +42,23 @@ let operator = ""; //operator is set to be blank for now until button for math i
 
 /*Step 3 
 Create a new function called calculate that takes the 2 numbers and the operator, and then runs one of the 4 basic math functions
-for operate function: if operate = math symbol (which will be a string) then run function
+for operate function: if operate = math symbol (which will be a string) then run function. 
+
+Round anwsers with long decimals so that they don't over flow the display
 */ 
 
 function calculate (a, b, operator){
     if(operator === "+"){
-        return addNum(a, b).toFixed(3);
+        return addNum(a, b);
     };
     if(operator === "-"){
-       return subNum(a, b).toFixed(3);
+       return subNum(a, b);
     }
     if(operator === "*"){
-        return multiplyNum(a,b).toFixed(3);
+        return multiplyNum(a,b);
     }
     if(operator === '/') {
-        return divideNum(a,b).toFixed(3);
+        return divideNum(a,b);
     }
     else 
     return console.log("fail") //this is for testing purposes only and should be removed later
@@ -156,7 +158,7 @@ equalBtn.addEventListener('click',() => {
                 let b = Number(numArr[2]);
         
                 //5f,g
-                equationTxt.textContent = Number(calculate(a,b,operator));
+                equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
     }
    --i }
    while(i > 3)
@@ -173,11 +175,8 @@ resetBtn.addEventListener('click',() =>{
 
 });
 
-/* Gotchas / Things to remember / watch for: 
-  - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
-  
-
-  Extra Credit:
+/* 
+Extra Credit:
     - Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though, like: 12.3.56.5. Disable the . button if there’s already a decimal separator in the display.
     - Add a “backspace” button, so the user can undo their last input if they click the wrong number.
     - Add keyboard support!
