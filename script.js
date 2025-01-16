@@ -3,6 +3,10 @@
 Write 4 functions that represent the basic calcuator functions of add, subtract, multiple and divide
 
 */
+const equationContainer = document.querySelector('.equation')
+const equationTxt = document.createElement('p');
+equationContainer.appendChild(equationTxt);
+equationTxt.textContent = "";
 
 //add
 function addNum(a, b) {
@@ -23,7 +27,7 @@ function multiplyNum(a, b) {
 function divideNum(a, b) {
 //divide by 0 not allowed - Display a error message when users try to divide by 0 
     if (a == 0 || b == 0) {
-        alert ("Error, stop trying to break my app")
+        alert ("Error, stop trying to break my app");
     }
     else return a / b;
 }
@@ -43,16 +47,16 @@ for operate function: if operate = math symbol (which will be a string) then run
 
 function calculate (a, b, operator){
     if(operator === "+"){
-        return addNum(a, b);
+        return addNum(a, b).toFixed(3);
     };
     if(operator === "-"){
-       return subNum(a, b);
+       return subNum(a, b).toFixed(3);
     }
     if(operator === "*"){
-        return multiplyNum(a,b);
+        return multiplyNum(a,b).toFixed(3);
     }
     if(operator === '/') {
-        return divideNum(a,b);
+        return divideNum(a,b).toFixed(3);
     }
     else 
     return console.log("fail") //this is for testing purposes only and should be removed later
@@ -73,10 +77,7 @@ breaking this down even further:
 let mathBtns = document.querySelectorAll('.mathButtons');
 
 //4c
-const equationContainer = document.querySelector('.equation')
-const equationTxt = document.createElement('p');
-equationContainer.appendChild(equationTxt);
-equationTxt.textContent = "";
+
 
 mathBtns.forEach((mathButtons) => {
     mathButtons.addEventListener('click',() => {
@@ -175,4 +176,10 @@ resetBtn.addEventListener('click',() =>{
 /* Gotchas / Things to remember / watch for: 
   - Round anwsers with long decimals so that they don't over flow the display (how to do this tbd)
   
+
+  Extra Credit:
+    - Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though, like: 12.3.56.5. Disable the . button if there’s already a decimal separator in the display.
+    - Add a “backspace” button, so the user can undo their last input if they click the wrong number.
+    - Add keyboard support!
+
 */ 
