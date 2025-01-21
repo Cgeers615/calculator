@@ -56,11 +56,17 @@ p{
 
 /*calculator equation*/ 
 .equation {
+    
     width: 400px;
     height:56px;
     padding:10px; 
     background-color: #f6f6f6;
-    /*border:1px solid #333333; for debugging only */
+    border:1px solid #333333; /*for debugging only */
+}
+
+.equation p {
+    font-family: "Orbitron", serif;
+    font-size:16px;
 }
 /*calculator numbers */ 
 /* .number-container {
