@@ -49,7 +49,7 @@ p{
     width: 400px;
     height:56px;
     padding:10px;
-    border:1px solid #333333; /*for debugging only */
+    /*border:1px solid #333333; for debugging only */
 }
 /*calculator numbers */ 
 /* .number-container {
@@ -67,6 +67,7 @@ p{
 button {
     font-family: "Orbitron", serif;
     font-size:18px;
+    letter-spacing: 1px;
     width: 100px;
     height:50px;
     margin:2px;
