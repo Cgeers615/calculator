@@ -175,10 +175,35 @@ resetBtn.addEventListener('click',() =>{
 
 });
 
+/* add a "backspace" button - plan: 
+    1) create button reference in the DOM 
+    2) add key press event for the backspace button && a click event for the acutal
+    3) when backspace button is used, ONLY the most recent key entered will be deleted 
+ */ 
+const clearBtn = document.querySelector('.clearBtn');
+
+function clear (){
+    
+    let newString = equationTxt.textContent;
+    let stringSlice = newString.slice(0,-1);
+    equationTxt.textContent = stringSlice;
+ 
+}
+
+clearBtn.addEventListener('click',clear);
+
+
+
+/* Add Keyboard support - plan: 
+    1) make #textcontainer an input box (will this change my code?)
+    2) create an event that will run on keypress (this will need to only work with the number keys, +, -, /, *, and enter)
+    3) once enter is used, then the same code that is ran when equal key is clicked will need to run (does this code now need to be made into a function?)
+    4) IF backspace is used (2nd part of extra credit) than a different event will fire that will erase last entered item in the string) 
+
 /* 
 Extra Credit:
-    - Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though, like: 12.3.56.5. Disable the . button if there’s already a decimal separator in the display.
-    - Add a “backspace” button, so the user can undo their last input if they click the wrong number.
-    - Add keyboard support!
+    - Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though, like: 12.3.56.5. Disable the . button if there’s already a decimal separator in the display. --unsure
+    - Add a “backspace” button, so the user can undo their last input if they click the wrong number. <-- doable
+    - Add keyboard support! <-- doable
 
 */ 
