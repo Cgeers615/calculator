@@ -15,7 +15,7 @@ html {
 #main-container {
     display: flex;
     justify-content: space-between;
-    width: 800px;
+    width: 824px;
 }
 
 h1 {
@@ -45,7 +45,8 @@ p{
 
 /*calculator container*/ 
 .calc-container{
-    width:402px;
+    width:424px;
+    padding:10px;
     font-family: "Orbitron", serif;
     font-size:18px;
     border:1px solid #333333;
