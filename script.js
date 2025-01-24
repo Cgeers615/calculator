@@ -1,7 +1,8 @@
 /* Web Browser Calculator */
 
 const equationContainer = document.querySelector('.equation')
-//this houses a smaller font verison of the complete equation
+
+//this will houses a smaller font verison of the complete equation
 const equationTxtSmall = document.createElement('p');
 equationContainer.appendChild(equationTxtSmall);
 equationTxtSmall.textContent = "";
@@ -11,7 +12,38 @@ const equationTxt = document.createElement('INPUT');
 equationTxt.setAttribute = ('type','text')
 equationContainer.appendChild(equationTxt);
 
-//need to create a 2ND text box that will house the bigger font 
+//variables for numbers and operator
+let a = "";
+let b = "";
+let operator = ""; //operator is set to be blank for now until button for it is selected or inputed via keyboard
+
+//basic math functions
+//add
+function addNum(a, b) {
+    return a + b;
+};
+
+//subtract
+function subNum (a, b) {
+    return a - b;
+}
+
+//multiply
+function multiplyNum(a, b) {
+    return a * b;
+}
+
+//divide
+function divideNum(a, b) {
+//divide by 0 not allowed - Display a error message when users try to divide by 0 
+    if (a == 0 || b == 0) {
+        alert ("Error, stop trying to break my app");
+    }
+    else return a / b;
+}
+
+
+
 
 
 
