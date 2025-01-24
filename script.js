@@ -8,9 +8,17 @@ equationContainer.appendChild(equationTxtSmall);
 equationTxtSmall.textContent = "";
 
 //text input box for calculator
-const equationTxt = document.createElement('INPUT');
-equationTxt.setAttribute = ('type','text')
+// const equationTxt = document.createElement('INPUT');
+// equationTxt.setAttribute = ('type','text')
+// equationContainer.appendChild(equationTxt);
+
+const equationTxt = document.createElement('p');
 equationContainer.appendChild(equationTxt);
+equationTxt.textContent = "";
+
+//number and operator buttons
+let numberBtns = document.querySelectorAll('.numberBtn');
+let operatorBtns = document.querySelectorAll('.operatorBtn');
 
 //variables for numbers and operator
 let a = "";
@@ -42,7 +50,7 @@ function divideNum(a, b) {
     else return a / b;
 }
 
-//calculate functions
+//calculate function
 function calculate (a, b, operator){
     if(operator === "+"){
         return addNum(a, b);
@@ -61,9 +69,27 @@ function calculate (a, b, operator){
 
 }
 
+//number buttons
 
+numberBtns.forEach((numberBtn) => {
+    numberBtn.addEventListener('click',() => {
+       //4a, 4b, 4d
+       equationTxt.textContent += numberBtn.value;
+       equationTxtSmall.textContent += numberBtn.value;
+       
 
+    })
+})
 
+//operator buttons
+operatorBtns.forEach((operatorBtn) => {
+    operatorBtn.addEventListener('click',() => {
+
+    equationTxt.textContent = ""
+    equationTxtSmall.textContent += operatorBtn.value;
+
+    })
+})
 
 
 
