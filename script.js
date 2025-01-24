@@ -16,6 +16,7 @@ equationTxt.textContent = "";
 let numberBtns = document.querySelectorAll('.numberBtn');
 let operatorBtns = document.querySelectorAll('.operatorBtn');
 const equalBtn = document.querySelector('.submitBtn')
+const resetBtn = document.querySelector('.resetBtn')
 
 //variables for numbers and operator
 let a = "";
@@ -131,6 +132,12 @@ equalBtn.addEventListener('click',() => {
        while(i > 3)
     }
     )
+
+resetBtn.addEventListener('click',() =>{
+    equationTxtSmall.textContent = '';
+    equationTxt.textContent = '';
+
+});
 
 /* Add Keyboard support - plan: **LOOK INTO DATA KEYS **
   1) make equationTxt into a text input 
