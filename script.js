@@ -17,6 +17,7 @@ let numberBtns = document.querySelectorAll('.numberBtn');
 let operatorBtns = document.querySelectorAll('.operatorBtn');
 const equalBtn = document.querySelector('.submitBtn')
 const resetBtn = document.querySelector('.resetBtn')
+const clearBtn = document.querySelector('.clearBtn');
 
 //variables for numbers and operator
 let a = "";
@@ -133,11 +134,26 @@ equalBtn.addEventListener('click',() => {
     }
     )
 
+//reset entire calculation    
 resetBtn.addEventListener('click',() =>{
     equationTxtSmall.textContent = '';
     equationTxt.textContent = '';
 
 });
+
+//delete most recent entry
+function clear (){
+
+    let newString = equationTxt.textContent;
+    let stringSlice = newString.slice(0,-1);
+    equationTxt.textContent = stringSlice;
+ 
+    let newStringSmall = equationTxtSmall.textContent;
+    let stringSliceSmall = newStringSmall.slice(0,-1);
+    equationTxtSmall.textContent = stringSliceSmall;
+}
+
+clearBtn.addEventListener('click',clear);
 
 /* Add Keyboard support - plan: **LOOK INTO DATA KEYS **
   1) make equationTxt into a text input 
