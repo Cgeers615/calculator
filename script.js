@@ -164,9 +164,31 @@ clearBtn.addEventListener('click',clear);
   
 */
 
+window.addEventListener('keydown',(e) =>{
+    //if key pressed is equal to or greater than 0 and equal to or less than 9
+    // set the equationTxt container and equationTxtSmall container to the value of the number
+    if (e.key >= 0 && e.key <= 9) {
+        equationTxt.textContent += e.key
+        equationTxtSmall.textContent += e.key
+    }
 
-/*Extra Credit:
-    - Users can get floating point numbers if they do the math required to get one, but they can’t type them in yet. Add a . button and let users input decimals! Make sure you don’t let them type more than one though, like: 12.3.56.5. Disable the . button if there’s already a decimal separator in the display. --unsure
-    - Add keyboard support! <-- doable
+    //switch statement for math functions 
+    switch (e.key) {
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            equationTxt.textContent = ""
+            equationTxtSmall.textContent += e.key;
+            break;
+        case'Enter':
+        case'=':
+        //this will run the evaluation function
+        break;
+    }
 
-*/ 
+
+   
+})
+
+
