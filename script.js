@@ -42,6 +42,24 @@ function divideNum(a, b) {
     else return a / b;
 }
 
+//calculate functions
+function calculate (a, b, operator){
+    if(operator === "+"){
+        return addNum(a, b);
+    };
+    if(operator === "-"){
+       return subNum(a, b);
+    }
+    if(operator === "*"){
+        return multiplyNum(a,b);
+    }
+    if(operator === '/') {
+        return divideNum(a,b);
+    }
+    else 
+    return console.log("fail") //this is for testing purposes only and should be removed later
+
+}
 
 
 
