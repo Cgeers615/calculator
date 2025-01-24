@@ -7,18 +7,15 @@ const equationTxtSmall = document.createElement('p');
 equationContainer.appendChild(equationTxtSmall);
 equationTxtSmall.textContent = "";
 
-//text input box for calculator
-// const equationTxt = document.createElement('INPUT');
-// equationTxt.setAttribute = ('type','text')
-// equationContainer.appendChild(equationTxt);
-
+// this will be the larger input section
 const equationTxt = document.createElement('p');
 equationContainer.appendChild(equationTxt);
 equationTxt.textContent = "";
 
-//number and operator buttons
+//buttons
 let numberBtns = document.querySelectorAll('.numberBtn');
 let operatorBtns = document.querySelectorAll('.operatorBtn');
+const equalBtn = document.querySelector('.submitBtn')
 
 //variables for numbers and operator
 let a = "";
@@ -91,7 +88,49 @@ operatorBtns.forEach((operatorBtn) => {
     })
 })
 
+//function to evaluate calculations
 
+equalBtn.addEventListener('click',() => {
+        let numString = equationTxtSmall.textContent;
+    
+        //5b
+        let numArr = numString.split(/([+\-*/])/)
+
+        //6d,e,f
+        let i = numArr.length 
+       do {
+        //6a
+        if (numArr.length > 3){
+             //6b
+                let numSliced = numArr.slice(0,3);
+                let a = Number(numSliced[0]);
+                let operator = numSliced[1];
+                let b = Number(numSliced[2]);
+                let c = calculate(a,b,operator);
+            //6c
+                // const numSpliced = numArr.toSpliced(0,3,c);
+               numArr.splice(0,3,c);
+            //console.table(numArr);
+        }
+    
+        else if (numArr.includes('') || numArr.length < 2) {
+           alert('error')
+            equationTxt.textContent = 'Error';    
+        }
+        
+        else if (numArr.length == 3) {
+                    //5c,d,e
+                    let a = Number(numArr[0]);
+                    let operator = numArr[1];
+                    let b = Number(numArr[2]);
+            
+                    //5f,g
+                    equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
+        }
+       --i }
+       while(i > 3)
+    }
+    )
 
 /* Add Keyboard support - plan: **LOOK INTO DATA KEYS **
   1) make equationTxt into a text input 
