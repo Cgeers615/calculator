@@ -90,49 +90,59 @@ operatorBtns.forEach((operatorBtn) => {
     })
 })
 
-//function to evaluate calculations
+/*things to fix:
+    - need to set it so that you can use returned value as part of the equation 
+    - need to fix it so that the code inside the click event can be wrapped into a function (how?)
+    - clean up code
+*/
 
-equalBtn.addEventListener('click',() => {
-        let numString = equationTxtSmall.textContent;
-    
-        //5b
-        let numArr = numString.split(/([+\-*/])/)
 
-        //6d,e,f
-        let i = numArr.length 
-       do {
-        //6a
-        if (numArr.length > 3){
-             //6b
-                let numSliced = numArr.slice(0,3);
-                let a = Number(numSliced[0]);
-                let operator = numSliced[1];
-                let b = Number(numSliced[2]);
-                let c = calculate(a,b,operator);
-            //6c
-                // const numSpliced = numArr.toSpliced(0,3,c);
-               numArr.splice(0,3,c);
-            //console.table(numArr);
-        }
+function evalEntry(){
+let numString = equationTxtSmall.textContent;    
+
+     //5b
+     let numArr = numString.split(/([+\-*/])/)
+
+     //6d,e,f
+     let i = numArr.length 
+    do {
+     //6a
+     if (numArr.length > 3){
+          //6b
+             let numSliced = numArr.slice(0,3);
+            let a = Number(numSliced[0]);
+             let operator = numSliced[1];
+             let b = Number(numSliced[2]);
+             let c = calculate(a,b,operator);
+         //6c
+         
+            numArr.splice(0,3,c);
+         //console.table(numArr);
+     }
+
+     else if (numArr.includes('') || numArr.length < 2) {
+        alert('error')
+         equationTxt.textContent = 'Error';    
+     }
     
-        else if (numArr.includes('') || numArr.length < 2) {
-           alert('error')
-            equationTxt.textContent = 'Error';    
-        }
+     else if (numArr.length == 3) {
+                 //5c,d,e
+                 let a = Number(numArr[0]);
+                 let operator = numArr[1];
+                let b = Number(numArr[2]);
         
-        else if (numArr.length == 3) {
-                    //5c,d,e
-                    let a = Number(numArr[0]);
-                    let operator = numArr[1];
-                    let b = Number(numArr[2]);
-            
-                    //5f,g
-                    equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
-        }
-       --i }
-       while(i > 3)
-    }
-    )
+                 //5f,g
+                 equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
+     }
+    --i }
+    while(i > 3)
+}
+
+
+equalBtn.addEventListener('click',evalEntry);
+
+
+
 
 //reset entire calculation    
 resetBtn.addEventListener('click',() =>{
@@ -183,7 +193,7 @@ window.addEventListener('keydown',(e) =>{
             break;
         case'Enter':
         case'=':
-        //this will run the evaluation function
+        evalEntry();
         break;
     }
 
