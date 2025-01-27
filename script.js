@@ -13,8 +13,8 @@ equationContainer.appendChild(equationTxt);
 equationTxt.textContent = "";
 
 //buttons
-let numberBtns = document.querySelectorAll('.numberBtn');
-let operatorBtns = document.querySelectorAll('.operatorBtn');
+const numberBtns = document.querySelectorAll('.numberBtn');
+const operatorBtns = document.querySelectorAll('.operatorBtn');
 const equalBtn = document.querySelector('.submitBtn')
 const resetBtn = document.querySelector('.resetBtn')
 const clearBtn = document.querySelector('.clearBtn');
@@ -90,6 +90,9 @@ operatorBtns.forEach((operatorBtn) => {
     })
 })
 
+// decimal btn
+
+
 /*things to fix:
     - need to set it so that you can use returned value as part of the equation 
     - need to fix it so that the code inside the click event can be wrapped into a function (how?)
@@ -110,7 +113,7 @@ let numString = equationTxtSmall.textContent;
      if (numArr.length > 3){
           //6b
              let numSliced = numArr.slice(0,3);
-            let a = Number(numSliced[0]);
+             let a = Number(numSliced[0]);
              let operator = numSliced[1];
              let b = Number(numSliced[2]);
              let c = calculate(a,b,operator);
@@ -129,7 +132,7 @@ let numString = equationTxtSmall.textContent;
                  //5c,d,e
                  let a = Number(numArr[0]);
                  let operator = numArr[1];
-                let b = Number(numArr[2]);
+                 let b = Number(numArr[2]);
         
                  //5f,g
                  equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
@@ -177,11 +180,15 @@ clearBtn.addEventListener('click',clear);
 window.addEventListener('keydown',(e) =>{
     //if key pressed is equal to or greater than 0 and equal to or less than 9
     // set the equationTxt container and equationTxtSmall container to the value of the number
+
+    
     if (e.key >= 0 && e.key <= 9) {
         equationTxt.textContent += e.key
         equationTxtSmall.textContent += e.key
     }
 
+
+   
     //switch statement for math functions 
     switch (e.key) {
         case '+':
@@ -198,10 +205,25 @@ window.addEventListener('keydown',(e) =>{
         case 'Backspace':
             clear();
             break;
+
+    }
+
+    if(e.key == '.' ) {
+
+    
+    if (equationTxt.textContent.includes('.')!= true){
+        equationTxt.textContent += e.key
+        equationTxtSmall.textContent += e.key
     }
 
 
-   
-})
+    else
+    e.stopPropagation()
+    
+}
+}
+    
 
+
+);
 
