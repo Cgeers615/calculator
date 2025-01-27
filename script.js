@@ -193,8 +193,11 @@ window.addEventListener('keydown',(e) =>{
             break;
         case'Enter':
         case'=':
-        evalEntry();
-        break;
+            evalEntry();
+            break;
+        case 'Backspace':
+            clear();
+            break;
     }
 
 
