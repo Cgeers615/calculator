@@ -201,6 +201,7 @@ window.addEventListener('keydown',(e) =>{
     if (e.key >= 0 && e.key <= 9) {
         equationTxt.textContent += e.key
         equationTxtSmall.textContent += e.key
+        checkDisplay(equationTxt, equationTxtSmall)
     }
 
 
@@ -213,6 +214,7 @@ window.addEventListener('keydown',(e) =>{
         case '/':
             equationTxt.textContent = ""
             equationTxtSmall.textContent += e.key;
+            
             break;
         case'Enter':
         case'=':
