@@ -76,9 +76,10 @@ numberBtns.forEach((numberBtn) => {
        //4a, 4b, 4d
        equationTxt.textContent += numberBtn.value;
        equationTxtSmall.textContent += numberBtn.value;
-       
-
+       checkDisplay(equationTxt, equationTxtSmall);
+      
     })
+    
 })
 
 //operator buttons
@@ -87,10 +88,11 @@ operatorBtns.forEach((operatorBtn) => {
 
     equationTxt.textContent = ""
     equationTxtSmall.textContent += operatorBtn.value;
-
+    
     })
+    
 })
-
+ 
 // decimal btn - disable button if '.' is already found
 decimalBtn.addEventListener('click',() =>{
     if(equationTxt.textContent.includes('.')!= true){
@@ -106,6 +108,9 @@ decimalBtn.addEventListener('click',() =>{
     - need to fix it so that the code inside the click event can be wrapped into a function (how?)
     - clean up code
 */
+
+
+
 
 
 function evalEntry(){
@@ -129,6 +134,7 @@ let numString = equationTxtSmall.textContent;
          
             numArr.splice(0,3,c);
          //console.table(numArr);
+         
      }
 
      else if (numArr.includes('') || numArr.length < 2) {
@@ -144,9 +150,11 @@ let numString = equationTxtSmall.textContent;
         
                  //5f,g
                  equationTxt.textContent = Number(calculate(a,b,operator).toFixed(3));
+                 equationTxtSmall.textContent =  Number(calculate(a,b,operator).toFixed(3));
      }
     --i }
     while(i > 3)
+   
 }
 
 
@@ -232,4 +240,14 @@ window.addEventListener('keydown',(e) =>{
 }
 );
 
-//need to add alert/code for content > 57 characters that will alert in an error saying "Error! Equation to long"
+function checkDisplay(equationTxtSmall,equationTxt){
+    if(equationTxtSmall.textContent.length >= 50) {
+        let longerString = equationTxtSmall.textContent.slice(-1);
+        alert("Error, equation to large");
+    }
+
+    if (equationTxt.textContent.length >= 30){
+        alert("Error, equation to large");
+    }
+   
+}
