@@ -18,6 +18,7 @@ const operatorBtns = document.querySelectorAll('.operatorBtn');
 const equalBtn = document.querySelector('.submitBtn')
 const resetBtn = document.querySelector('.resetBtn')
 const clearBtn = document.querySelector('.clearBtn');
+const decimalBtn = document.querySelector('.decimalBtn');
 
 //variables for numbers and operator
 let a = "";
@@ -90,8 +91,15 @@ operatorBtns.forEach((operatorBtn) => {
     })
 })
 
-// decimal btn
-
+// decimal btn - disable button if '.' is already found
+decimalBtn.addEventListener('click',() =>{
+    if(equationTxt.textContent.includes('.')!= true){
+        equationTxt.textContent += decimalBtn.value
+        equationTxtSmall.textContent += decimalBtn.value
+    }
+    else 
+    return;
+})
 
 /*things to fix:
     - need to set it so that you can use returned value as part of the equation 
@@ -207,7 +215,7 @@ window.addEventListener('keydown',(e) =>{
             break;
 
     }
-
+    //disable '.' if it is already found by stopping the event propagtion
     if(e.key == '.' ) {
 
     
@@ -222,8 +230,6 @@ window.addEventListener('keydown',(e) =>{
     
 }
 }
-    
-
-
 );
 
+//need to add alert/code for content > 57 characters that will alert in an error saying "Error! Equation to long"
