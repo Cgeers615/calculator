@@ -50,9 +50,11 @@ p{
     font-family: "Orbitron", serif;
     font-size:18px;
     border:1px solid #333333;
+    border-radius: 10px;
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
+    background-color:#d8d8d8;
 }
 
 /*calculator equation*/ 
@@ -70,7 +72,7 @@ p{
     text-align: right;
 }
 
-.equation input {
+.equation p:last-child {
     font-family: "Orbitron", serif;
     font-size:20px;
     font-weight:800;
@@ -97,7 +99,7 @@ p{
 
 button {
     font-family: "Orbitron", serif;
-    font-size:18px;
+    font-size:22px;
     letter-spacing: 1px;
     width: 98px;
     height:70px;
@@ -113,7 +115,8 @@ button {
 
 .operatorBtn{
     color:#ffffff;
-    background-color:#ffc300 ;
+    background-color:#869e42 ;
+    /* background-color:#ffc300 ; */
 }
 
 /*symbols container */ 
